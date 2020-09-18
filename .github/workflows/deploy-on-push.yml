@@ -17,6 +17,4 @@ jobs:
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          REACT_APP_LAMBDA_URL: ${{ secrets.NETLIFY_LAMBDA_URL }}
-          REACT_APP_URL: ${{ secrets.NETLIFY_APP_URL }}
         run: netlify deploy --dir=build --prod
