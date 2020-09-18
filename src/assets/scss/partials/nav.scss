@@ -1,0 +1,39 @@
+.nav-link {
+  color: $nav-link-color;
+
+  &:hover,
+  &.active {
+    color: theme-color("primary");
+  }
+
+  i:not(.fa) {
+    position: relative;
+    top: 2px;
+  }
+}
+
+// Nav wrapper
+.nav-wrapper {
+  padding: 1rem 0;
+  @include border-top-radius($card-border-radius);
+
+  + .card {
+    @include border-top-radius(0);
+    @include border-bottom-radius($card-border-radius);
+  }
+}
+
+.nav-header i {
+  float: left;
+  font-size: $font-size-lg;
+  margin-right: 10px;
+}
+
+.nav-header h1 {
+  font-size: $font-size-lg;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: theme-color("neutral");
+  letter-spacing: .05px;
+
+}

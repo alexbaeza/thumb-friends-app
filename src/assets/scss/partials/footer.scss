@@ -1,0 +1,24 @@
+.footer {
+  background: $secondary;
+  padding: 1.5rem 0;
+
+  .copyright {
+    font-size: $font-size-sm;
+  }
+
+  .powered {
+    font-size: $font-size-sm;
+  }
+}
+
+.nav-footer {
+  .nav-link {
+    font-size: $font-size-sm;
+  }
+
+  .nav-item:last-child {
+    .nav-link {
+      padding-right: 0;
+    }
+  }
+}

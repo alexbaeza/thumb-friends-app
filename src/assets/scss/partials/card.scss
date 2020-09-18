@@ -1,0 +1,19 @@
+
+.card {
+  position: relative;
+
+  &.card-plain {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+}
+
+// Animated cards
+
+.card-lift--hover {
+  &:hover {
+    transform: translateY(-20px);
+    @include transition($transition-base);
+  }
+}

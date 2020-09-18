@@ -1,0 +1,3 @@
+@function shapes-default-color($key: "step-1-gradient-bg") {
+  @return map-get($shapes-default-colors, $key);
+}

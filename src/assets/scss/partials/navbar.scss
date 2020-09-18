@@ -1,0 +1,63 @@
+// Transparent navbar
+
+.navbar-transparent {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: transparent !important;
+  border: 0;
+  box-shadow: none;
+
+  .navbar-brand {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .navbar-toggler {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .navbar-toggler-icon {
+    background-image: $navbar-dark-toggler-icon-bg;
+  }
+}
+
+.bg-white {
+  .navbar-toggler-icon {
+    background-image: $navbar-light-toggler-icon-bg
+
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .navbar-transparent {
+    .navbar-nav {
+      .nav-link {
+        color: $navbar-dark-color;
+
+        @include hover-focus {
+          color: $navbar-dark-hover-color;
+        }
+
+        &.disabled {
+          color: $navbar-dark-disabled-color;
+        }
+      }
+
+      .show > .nav-link,
+      .active > .nav-link,
+      .nav-link.show,
+      .nav-link.active {
+        color: $navbar-dark-active-color;
+      }
+    }
+
+    .navbar-brand {
+      color: $navbar-dark-color;
+
+      @include hover-focus {
+        color: $navbar-dark-color;
+      }
+    }
+  }
+}

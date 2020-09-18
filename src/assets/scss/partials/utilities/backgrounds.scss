@@ -1,0 +1,11 @@
+// Shape (svg) fill colors
+
+@each $color, $value in $theme-colors {
+  .fill-#{$color} {
+    fill: $value;
+  }
+
+  .stroke-#{$color} {
+    stroke: $value;
+  }
+}
