@@ -4,11 +4,10 @@ import {
 } from 'reactstrap';
 
 const LAMBDA_URL = process.env.REACT_APP_LAMBDA_URL;
-const APP_URL = process.env.REACT_APP_URL;
 
 function AvatarCard(props) {
   const { thumbFriendId } = props;
-  const editUrl = `${APP_URL}/build/${thumbFriendId}`;
+  const editUrl = `/build/${thumbFriendId}`;
   return (
     <>
       <Card className="card-lift--hover shadow border-0">

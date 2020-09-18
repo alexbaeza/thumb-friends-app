@@ -18,12 +18,10 @@ ReactDOM.render(
       <Route path={PATHS.HOME} exact render={(props) => <Home {...props} />} />
       <Route
         path={PATHS.BUILD}
-        exact
         render={(props) => <Build {...props} />}
       />
       <Route
         path={PATHS.BUILD_FROM_ID}
-        exact
         render={(props) => <Build {...props} />}
       />
       <Redirect to={PATHS.HOME} />
