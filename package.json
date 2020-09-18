@@ -4,9 +4,10 @@
   "main": "index.js",
   "author": "alexbaeza",
   "license": "MIT",
+  "homepage": ".",
   "scripts": {
     "start": "craco start",
-    "build": "craco build && gulp licenses",
+    "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
     "install:clean": "rm -rf node_modules/ && rm -rf yarn.lock && yarn install && yarn start",

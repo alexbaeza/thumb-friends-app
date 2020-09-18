@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-  BrowserRouter, Redirect, Route, Switch,
+  HashRouter, Redirect, Route, Switch,
 } from 'react-router-dom';
 
 /* eslint-disable import/no-unresolved */
@@ -13,7 +13,7 @@ import PATHS from './utils/paths';
 import Build from './views/build/Build';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <Switch>
       <Route path={PATHS.HOME} exact render={(props) => <Home {...props} />} />
       <Route
@@ -28,6 +28,6 @@ ReactDOM.render(
       />
       <Redirect to={PATHS.HOME} />
     </Switch>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root'),
 );
