@@ -81,9 +81,7 @@ function Home(props) {
                       <img
                         alt="Thumb friend main page"
                         className="rounded-circle"
-                        src={`${LAMBDA_URL}/svg?id=${generateRandomAvatarIds(
-                          1,
-                        )}`}
+                        src={`${LAMBDA_URL}/svg?id=${generateRandomAvatarIds(1)}`}
                       />
                     </div>
                   </Col>

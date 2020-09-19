@@ -1,6 +1,12 @@
 .thumb-friend-image {
   position: relative;
 
+  .skeleton {
+    position: relative;
+    transform: translate(-50%);
+    left: 50%;
+  }
+
   img {
     @extend .shadow;
     max-width: 100%;
