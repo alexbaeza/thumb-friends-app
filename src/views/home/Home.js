@@ -4,6 +4,7 @@ import {
   Button, Col, Container, Row,
 } from 'reactstrap';
 
+import { withRouter } from 'react-router-dom';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import Footer from '../../components/Footer/Footer';
 import AvatarList from '../../components/AvatarList/AvatarList';
@@ -15,7 +16,7 @@ import { generateRandomAvatarIds } from '../../utils/id-utils';
 
 const LAMBDA_URL = process.env.REACT_APP_LAMBDA_URL;
 
-function Home() {
+function Home(props) {
   return (
     <>
       <NavigationBar />
@@ -54,7 +55,7 @@ function Home() {
                       <Button
                         className="btn-icon mb-3 mb-sm-0"
                         color="info"
-                        href={PATHS.BUILD}
+                        onClick={() => props.history.push(PATHS.BUILD)}
                       >
                         <span className="btn-inner--icon mr-1">
                           <i className="fa fa-code" />
@@ -103,4 +104,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default withRouter(Home);

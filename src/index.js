@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  HashRouter, Redirect, Route, Switch,
-} from 'react-router-dom';
+import { MemoryRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 /* eslint-disable import/no-unresolved */
 import 'assets/vendor/font-awesome/css/font-awesome.min.css';
@@ -13,19 +11,19 @@ import PATHS from './utils/paths';
 import Build from './views/build/Build';
 
 ReactDOM.render(
-  <HashRouter>
+  <MemoryRouter>
     <Switch>
-      <Route path={PATHS.HOME} exact render={(props) => <Home {...props} />} />
+      <Route path={PATHS.HOME} exact component={Home} />
       <Route
         path={PATHS.BUILD}
-        render={(props) => <Build {...props} />}
+        component={Build}
       />
       <Route
         path={PATHS.BUILD_FROM_ID}
-        render={(props) => <Build {...props} />}
+        component={Build}
       />
       <Redirect to={PATHS.HOME} />
     </Switch>
-  </HashRouter>,
+  </MemoryRouter>,
   document.getElementById('root'),
 );

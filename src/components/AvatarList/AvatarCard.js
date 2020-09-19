@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Badge, Button, Card, CardBody, Row,
 } from 'reactstrap';
+import { withRouter } from 'react-router-dom';
 
 const LAMBDA_URL = process.env.REACT_APP_LAMBDA_URL;
 
@@ -29,7 +30,7 @@ function AvatarCard(props) {
           <Button
             className="btn-block btn-lg thumb-friend-button"
             color="primary"
-            href={editUrl}
+            onClick={() => props.history.push(editUrl)}
           >
             Edit
           </Button>
@@ -39,4 +40,4 @@ function AvatarCard(props) {
   );
 }
 
-export default AvatarCard;
+export default withRouter(AvatarCard);
