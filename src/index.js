@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MemoryRouter, Route, Switch, Redirect } from 'react-router-dom';
+import {
+  MemoryRouter, Route, Switch, Redirect,
+} from 'react-router-dom';
 
 /* eslint-disable import/no-unresolved */
 import 'assets/vendor/font-awesome/css/font-awesome.min.css';
@@ -16,10 +18,6 @@ ReactDOM.render(
       <Route path={PATHS.HOME} exact component={Home} />
       <Route
         path={PATHS.BUILD}
-        component={Build}
-      />
-      <Route
-        path={PATHS.BUILD_FROM_ID}
         component={Build}
       />
       <Redirect to={PATHS.HOME} />

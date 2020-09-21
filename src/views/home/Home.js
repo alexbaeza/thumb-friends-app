@@ -15,6 +15,7 @@ import { calculateTotalCombinations } from '../../utils/utils';
 import { generateRandomAvatarIds } from '../../utils/id-utils';
 
 const LAMBDA_URL = process.env.REACT_APP_LAMBDA_URL;
+const BUY_ME_A_COFFEE_URL = process.env.REACT_APP_BUY_ME_A_COFFEE_URL;
 
 function Home(props) {
   return (
@@ -35,8 +36,7 @@ function Home(props) {
                     </h1>
                     <p className="lead text-white">
                       Create your own thumb friend avatar by combining different
-                      facial expressions, there are millions of combinations
-                      possible.
+                      facial expressions, there are millions of possible combinations.
                     </p>
                     <p className="lead text-white">
                       Free your creativity with a total of
@@ -67,7 +67,7 @@ function Home(props) {
                       <Button
                         className="btn-icon mb-3 mb-sm-0 ml-1"
                         color="default"
-                        href="http://buymeacoff.ee/alexbaeza"
+                        href={BUY_ME_A_COFFEE_URL}
                       >
                         <span className="btn-inner--icon mr-1">
                           <i className="fa fa-coffee" />

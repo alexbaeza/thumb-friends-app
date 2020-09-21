@@ -39,7 +39,7 @@ class Build extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      id: this.props.match.params.id,
+      id: '',
       modal: false,
       hairColour: selectRandomProperty(colours.hair),
       facialHairColour: selectRandomProperty(colours.facialHair),
@@ -57,10 +57,8 @@ class Build extends React.Component {
   }
 
   componentDidMount() {
-    const { id } = this.state;
-
-    if (id) {
-      const choices = idToProps(id);
+    if (this.props.location.state && this.props.location.state.id) {
+      const choices = idToProps(this.props.location.state.id);
       this.updateState(choices);
     }
   }
