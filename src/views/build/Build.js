@@ -61,6 +61,8 @@ class Build extends React.Component {
       const choices = idToProps(id);
       this.updateState(choices);
     }
+    // reset page scroll
+    window.scrollTo(0, 0);
   }
 
   setAvatarId() {
