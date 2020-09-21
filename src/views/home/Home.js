@@ -4,9 +4,7 @@ import {
   Button, Col, Container, Row,
 } from 'reactstrap';
 
-import { withRouter } from 'react-router-dom';
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import Footer from '../../components/Footer/Footer';
+import { Link } from 'react-router-dom';
 import AvatarList from '../../components/AvatarList/AvatarList';
 import PATHS from '../../utils/paths';
 import Separator from '../../components/Separator/Separator';
@@ -17,10 +15,9 @@ import { generateRandomAvatarIds } from '../../utils/id-utils';
 const LAMBDA_URL = process.env.REACT_APP_LAMBDA_URL;
 const BUY_ME_A_COFFEE_URL = process.env.REACT_APP_BUY_ME_A_COFFEE_URL;
 
-function Home(props) {
+function Home() {
   return (
     <>
-      <NavigationBar />
       <main>
         <div className="position-relative">
           <section className="section section-shaped pb-250">
@@ -52,18 +49,19 @@ function Home(props) {
                       Consider buying me a coffee!
                     </p>
                     <div className="btn-wrapper">
-                      <Button
-                        className="btn-icon mb-3 mb-sm-0"
-                        color="info"
-                        onClick={() => props.history.push(PATHS.BUILD)}
-                      >
-                        <span className="btn-inner--icon mr-1">
-                          <i className="fa fa-code" />
-                        </span>
-                        <span className="btn-inner--text">
-                          Create my thumb friend
-                        </span>
-                      </Button>
+                      <Link to={PATHS.BUILD}>
+                        <Button
+                          className="btn-icon mb-3 mb-sm-0"
+                          color="info"
+                        >
+                          <span className="btn-inner--icon mr-1">
+                            <i className="fa fa-code" />
+                          </span>
+                          <span className="btn-inner--text">
+                            Create my thumb friend
+                          </span>
+                        </Button>
+                      </Link>
                       <Button
                         className="btn-icon mb-3 mb-sm-0 ml-1"
                         color="default"
@@ -97,9 +95,8 @@ function Home(props) {
           </Container>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
 
-export default withRouter(Home);
+export default Home;

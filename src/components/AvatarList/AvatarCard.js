@@ -1,8 +1,9 @@
 import React from 'react';
-import { Badge, Button, Card, CardBody, Row, } from 'reactstrap';
-import { withRouter } from 'react-router-dom';
+import {
+  Badge, Button, Card, CardBody, Row,
+} from 'reactstrap';
+import { Link } from 'react-router-dom';
 import AvatarCardSkeleton from './AvatarCardSkeleton';
-import PATHS from '../../utils/paths';
 
 const LAMBDA_URL = process.env.REACT_APP_LAMBDA_URL;
 
@@ -20,7 +21,9 @@ class AvatarCard extends React.Component {
 
   render() {
     const { ready } = this.state;
-    const { thumbFriendId, history } = this.props;
+    const { thumbFriendId } = this.props;
+    const editUrl = `/build/${thumbFriendId}`;
+
     const display = !ready ? { display: 'none' } : {};
 
     return (
@@ -32,7 +35,7 @@ class AvatarCard extends React.Component {
             </Badge>
           </Row>
           <CardBody>
-            {!ready && <AvatarCardSkeleton/>}
+            {!ready && <AvatarCardSkeleton />}
             <div className="thumb-friend-image" style={display}>
               <div className="thumb-friend-image">
                 <img
@@ -42,13 +45,15 @@ class AvatarCard extends React.Component {
                   src={`${LAMBDA_URL}/svg?id=${thumbFriendId}`}
                 />
               </div>
-              <Button
-                className="btn-block btn-lg thumb-friend-button"
-                color="primary"
-                onClick={() => history.push(PATHS.BUILD, { id: thumbFriendId })}
-              >
-                Edit
-              </Button>
+              <Link to={editUrl}>
+                <Button
+                  className="btn-block btn-lg thumb-friend-button"
+                  color="primary"
+                  href={editUrl}
+                >
+                  Edit
+                </Button>
+              </Link>
             </div>
           </CardBody>
         </Card>
@@ -57,4 +62,4 @@ class AvatarCard extends React.Component {
   }
 }
 
-export default withRouter(AvatarCard);
+export default AvatarCard;

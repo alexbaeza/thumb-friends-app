@@ -5,7 +5,6 @@ import {
 } from 'reactstrap';
 import { saveSvgAsPng } from 'save-svg-as-png';
 import colours from '../../colours';
-import Footer from '../../components/Footer/Footer';
 import Avatar from '../../components/Avatar/Avatar';
 import Separator from '../../components/Separator/Separator';
 import HeroBackground from '../../components/Hero/HeroBackground';
@@ -23,7 +22,6 @@ import ShareModal from '../../components/ShareModal/ShareModal';
 import { idToProps, propsToId } from '../../utils/id-utils';
 import { selectRandomProperty } from '../../utils/property-utils';
 import { selectRandomKey } from '../../utils/object-utils';
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
 
 const settingMaps = {
   accessory: Object.fromEntries(accessoriesMap),
@@ -39,7 +37,7 @@ class Build extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      id: '',
+      id: this.props.match.params.id,
       modal: false,
       hairColour: selectRandomProperty(colours.hair),
       facialHairColour: selectRandomProperty(colours.facialHair),
@@ -57,8 +55,10 @@ class Build extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.location.state && this.props.location.state.id) {
-      const choices = idToProps(this.props.location.state.id);
+    const { id } = this.state;
+
+    if (id) {
+      const choices = idToProps(id);
       this.updateState(choices);
     }
   }
@@ -140,7 +140,6 @@ class Build extends React.Component {
 
     return (
       <>
-        <NavigationBar />
         <main className="build-page">
           <section className="section-build-page-cover section-shaped my-0">
             <HeroBackground />
@@ -224,7 +223,7 @@ class Build extends React.Component {
                               <select
                                 id={key}
                                 name={key}
-                                defaultValue={this.state[key]}
+                                value={this.state[key]}
                                 onChange={this.updateProp}
                                 className="form-control bg-white rounded border px-4 py-2"
                               >
@@ -286,7 +285,6 @@ class Build extends React.Component {
             </Container>
           </section>
         </main>
-        <Footer />
       </>
     );
   }
