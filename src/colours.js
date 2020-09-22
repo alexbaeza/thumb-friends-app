@@ -51,8 +51,8 @@ const colours = {
       shadow: '#673f28',
     },
     black: {
-      base: '#1b1b1b',
-      shadow: '#131313',
+      base: '#282828',
+      shadow: '#1b1b1b',
     },
     white: {
       base: '#ffffff',
@@ -82,8 +82,8 @@ const colours = {
       shadow: '#673f28',
     },
     black: {
-      base: '#1b1b1b',
-      shadow: '#131313',
+      base: '#282828',
+      shadow: '#1b1b1b',
     },
     white: {
       base: '#ffffff',
@@ -113,8 +113,8 @@ const colours = {
       shadow: '#8D5638',
     },
     black: {
-      base: '#1b1b1b',
-      shadow: '#131313',
+      base: '#282828',
+      shadow: '#1b1b1b',
     },
     white: {
       base: '#ffffff',
@@ -147,8 +147,8 @@ const colours = {
       shadow: '#3CA047',
     },
     black: {
-      base: '#1b1b1b',
-      shadow: '#131313',
+      base: '#282828',
+      shadow: '#1b1b1b',
     },
   },
   bgColours: {
